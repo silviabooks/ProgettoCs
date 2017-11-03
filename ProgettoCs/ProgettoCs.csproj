@@ -9,6 +9,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.4.4" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,11 +23,26 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\components\post-detail\post-detail.component.ts" />
+    <None Remove="ClientApp\app\components\post-row\post-row.component.ts" />
     <None Remove="ClientApp\app\components\posts-list\posts-list.component.ts" />
+    <None Remove="ClientApp\app\components\posts-view\posts-view.component.ts" />
+    <None Remove="ClientApp\app\post.type.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\components\post-detail\post-detail.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\post-row\post-row.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\posts-list\posts-list.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\posts-view\posts-view.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\post.type.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\Resources\" />
+    <Folder Include="Views\Shared\" />
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

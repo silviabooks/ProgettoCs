@@ -1,0 +1,10 @@
+﻿<div>
+    <h1>Your Posts...</h1>
+    <button (click)="addNewPost()"> Add a new post </button>
+    <div>&nbsp;</div>
+    <div class="well well-sm" *ngFor="let p of postList">
+        <div>
+            <b class="post-title">{{ p.Title }}</b>
+        </div>
+    </div>
+</div>

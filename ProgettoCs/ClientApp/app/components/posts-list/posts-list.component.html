@@ -1,14 +1,29 @@
 ﻿<h1>Your Posts</h1>
 
-<table class='table table-striped table-hover table-sm'>
+<p *ngIf="!postList"><em>Getting posts...</em></p>
+
+
+
+<div *ngIf="postList">
+    <div class="alert alert-danger" *ngFor="let p of postList">
+        <b>ciao</b>  
+    </div>
+</div>
+
+
+
+<table class='table table-hover table-sm'>
     <thead>
         <tr>
             <th>Ciao</th>
         </tr>
     </thead>
+
     <tbody>
-        <tr>
-            <td>ciao</td>
-        </tr>
+        <post-row></post-row>
     </tbody>
 </table>
+
+
+
+
