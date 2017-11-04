@@ -1,10 +1,23 @@
-﻿<div>
+﻿<div [routerLinkActive]="['link-active']">
     <h1>Your Posts...</h1>
-    <button (click)="addNewPost()"> Add a new post </button>
+ 
+    <button [routerLink]="['/ROBE']"> Add a new post </button>
+
     <div>&nbsp;</div>
-    <div class="well well-sm" *ngFor="let p of postList">
-        <div>
-            <b class="post-title">{{ p.Title }}</b>
+
+    <div *ngIf="!postList"><em>Getting posts...</em></div>
+
+    <em>Click on the <span class="glyphicon glyphicon-chevron-right"></span> to open the post</em>
+    <div>&nbsp;</div>
+    <div *ngIf="postList">
+        <div class="well well-sm mouseOver" *ngFor="let p of postList">
+            <div>
+                <b class="post-title">
+                    <span class="glyphicon glyphicon-chevron-right" (click)="navigateToDetail(p.Id)"></span>
+                    {{ p.Title }}
+                </b> 
+                <div class="pull-right">Published: {{ p.PublicationDate | date : "MMM d, y h:mm:ss a" }}</div> 
+            </div>
         </div>
     </div>
 </div>

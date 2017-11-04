@@ -8,10 +8,8 @@ import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { CounterComponent } from './components/counter/counter.component';
-import { PostsListComponent } from './components/posts-list/posts-list.component';
-import { PostDetailComponent } from './components/post-detail/post-detail.component';
-import { PostRowComponent } from './components/post-row/post-row.component';
 import { PostsViewComponent } from './components/posts-view/posts-view.component';
+import { PostDetailComponent } from './components/post-detail/post-detail.component';
 
 @NgModule({
     declarations: [
@@ -19,10 +17,8 @@ import { PostsViewComponent } from './components/posts-view/posts-view.component
         NavMenuComponent,
         CounterComponent,
         HomeComponent,
-        PostsListComponent,
-        PostDetailComponent,
         PostsViewComponent,
-        PostRowComponent
+        PostDetailComponent
     ],
     imports: [
         CommonModule,
@@ -33,9 +29,8 @@ import { PostsViewComponent } from './components/posts-view/posts-view.component
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'posts-view', component: PostsViewComponent },
-            { path: 'posts-list', component: PostsListComponent },
-            { path: 'post-detail', component: PostDetailComponent },
-            { path: 'post-row', component: PostRowComponent },
+            { path: 'post-detail/:id', component: PostDetailComponent },
+
             { path: '**', redirectTo: 'home' }
         ])
     ]
