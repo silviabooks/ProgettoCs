@@ -1,9 +1,9 @@
 ﻿<div [routerLinkActive]="['link-active']">
     <h1>Your Posts...</h1>
  
-    <button [routerLink]="['/new-post']"> Add a new post </button>
-
-    <div>&nbsp;</div>
+    <button class="btn btn-info pull-right"
+            [routerLink]="['/new-post']"
+            > Add a new post </button>
 
     <div *ngIf="!postList"><em>Getting posts...</em></div>
 

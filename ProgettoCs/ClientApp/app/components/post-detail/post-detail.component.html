@@ -1,10 +1,12 @@
 ﻿<h1>{{currentPost.Title}}</h1>
 <div>
-    <p>{{currentPost.Body}}</p>
-
+    <p *ngIf="currentPost.Body == null">
+        <em>The post is empty.</em>
+    </p>
+    <p *ngIf="currentPost.Body != null">{{currentPost.Body}}</p>
 </div>
-<h6>Publication date: {{ currentPost.PublicationDate | date : "MMM d, y h:mm:ss a" }}</h6>
+<h6 >Publication date: {{ currentPost.PublicationDate | date : "MMM d, y h:mm:ss a" }}</h6>
 
-<button (click)="cancelPost()">
+<button class="btn btn-warning btn-sm" (click)="cancelPost()">
     <span class=" glyphicon glyphicon-trash"></span> Cancel post
 </button>
