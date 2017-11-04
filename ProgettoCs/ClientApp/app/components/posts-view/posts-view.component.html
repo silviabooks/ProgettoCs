@@ -1,7 +1,7 @@
 ﻿<div [routerLinkActive]="['link-active']">
     <h1>Your Posts...</h1>
  
-    <button [routerLink]="['/ROBE']"> Add a new post </button>
+    <button [routerLink]="['/new-post']"> Add a new post </button>
 
     <div>&nbsp;</div>
 
@@ -16,7 +16,7 @@
                     <span class="glyphicon glyphicon-chevron-right" (click)="navigateToDetail(p.Id)"></span>
                     {{ p.Title }}
                 </b> 
-                <div class="pull-right">Published: {{ p.PublicationDate | date : "MMM d, y h:mm:ss a" }}</div> 
+                <div class="pull-right">Published: {{ p.PublicationDate | date : "MMM d, y hh:mm a" }}</div> 
             </div>
         </div>
     </div>

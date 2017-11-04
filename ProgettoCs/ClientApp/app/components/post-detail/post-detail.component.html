@@ -4,3 +4,7 @@
 
 </div>
 <h6>Publication date: {{ currentPost.PublicationDate | date : "MMM d, y h:mm:ss a" }}</h6>
+
+<button (click)="cancelPost()">
+    <span class=" glyphicon glyphicon-trash"></span> Cancel post
+</button>

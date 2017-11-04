@@ -7,18 +7,18 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
-import { CounterComponent } from './components/counter/counter.component';
 import { PostsViewComponent } from './components/posts-view/posts-view.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
+import { NewPostComponent } from './components/new-post/new-post.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         NavMenuComponent,
-        CounterComponent,
         HomeComponent,
         PostsViewComponent,
-        PostDetailComponent
+        PostDetailComponent,
+        NewPostComponent
     ],
     imports: [
         CommonModule,
@@ -27,10 +27,9 @@ import { PostDetailComponent } from './components/post-detail/post-detail.compon
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
-            { path: 'counter', component: CounterComponent },
             { path: 'posts-view', component: PostsViewComponent },
             { path: 'post-detail/:id', component: PostDetailComponent },
-
+            { path: 'new-post', component:NewPostComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]

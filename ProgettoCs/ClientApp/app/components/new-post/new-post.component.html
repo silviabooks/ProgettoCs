@@ -1,0 +1,23 @@
+﻿<h1>
+    Create your post...
+</h1>
+
+
+<form>
+    <div class="form-group">
+        <label for="title">Post title:</label>
+        <input type="text" class="form-control" id="title" 
+               [(ngModel)]="newPostTitle" 
+               [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group">
+        <label for="body">Post body:</label>
+        <textarea class="form-control" rows="5" id="body" 
+                  [(ngModel)]="newPostBody" 
+                  [ngModelOptions]="{standalone: true}"
+                  placeholder="Unleash your fantasy!" ></textarea>
+    </div>
+    <button class="btn btn-default" (click)="addNewPost()">Submit</button>
+</form> 
+
+<!--<h3 *ngIf="postAdded">Post added successfully!</h3>-->

@@ -5,6 +5,7 @@
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <IsPackable>false</IsPackable>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,22 +24,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\components\new-post\new-post.component.ts" />
     <None Remove="ClientApp\app\components\post-detail\post-detail.component.ts" />
-    <None Remove="ClientApp\app\components\post-row\post-row.component.ts" />
-    <None Remove="ClientApp\app\components\posts-list\posts-list.component.ts" />
     <None Remove="ClientApp\app\components\posts-view\posts-view.component.ts" />
+    <None Remove="ClientApp\app\components\simplepost.type.ts" />
     <None Remove="ClientApp\app\post.type.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\components\new-post\new-post.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\post-detail\post-detail.component.ts" />
-    <TypeScriptCompile Include="ClientApp\app\components\post-row\post-row.component.ts" />
-    <TypeScriptCompile Include="ClientApp\app\components\posts-list\posts-list.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\posts-view\posts-view.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\post.type.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\app\types\" />
     <Folder Include="ClientApp\Resources\" />
     <Folder Include="Views\Shared\" />
     <Folder Include="wwwroot\images\" />
