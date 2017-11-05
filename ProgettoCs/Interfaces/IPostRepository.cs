@@ -9,6 +9,7 @@ namespace ProgettoCs.Interfaces
 {
     public interface IPostRepository
     {
+        //POSTS METHODS:
         // retrieve all posts
         Task<IEnumerable<Post>> GetPosts();
         // get one post with Id = id
@@ -22,8 +23,9 @@ namespace ProgettoCs.Interfaces
         // update a post (only the post body)
         Task<bool> UpdatePost(Guid id, string body);
 
+        // COMMENTS METHODS:
         Task AddComment(Comment c);
-
+        // get all the comments of a post with Id = postId
         Task<IEnumerable<Comment>> GetPostComments(Guid postId);
     }
 }

@@ -36,7 +36,11 @@ namespace ProgettoCs.Data
         {
             var filter = Builders<Post>.Filter.Eq("Id", id);
             DeleteResult res = await context.Posts.DeleteOneAsync(filter);
-            return res.IsAcknowledged && res.DeletedCount > 0;
+            // Delete also all the comments related to this post
+            var filter2 = Builders<Comment>.Filter.Eq("PostId", id);
+            DeleteResult res2 = await context.Comments.DeleteManyAsync(filter2);
+            
+            return res.IsAcknowledged && res.DeletedCount > 0 && res2.IsAcknowledged && res2.DeletedCount > 0;
         }
 
         public async Task<bool> UpdatePost(Post post)
@@ -59,7 +63,6 @@ namespace ProgettoCs.Data
         }
         
         // COMMENTS FUNCTIONS:
-
         public async Task AddComment(Comment c) => await context.Comments.InsertOneAsync(c);
 
         public async Task<IEnumerable<Comment>> GetPostComments(Guid postId)

@@ -11,3 +11,6 @@ img {
     height: auto;
     width: auto;
 }
+.center-image {
+    align-content: center;
+}
