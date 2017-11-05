@@ -34,10 +34,23 @@ namespace ProgettoCs.Controllers
         }
 
         [HttpPut]
-        public void Put([FromBody]Comment value)
+        public void Put([FromBody]SimpleComment value)
         {
-            _repo.AddComment(value);
+            _repo.AddComment(new Comment()
+            {
+                Id = new Guid(),
+                Author = value.Author,
+                Body = value.Body,
+                PostId = value.PostId
+            });
             Console.WriteLine(value);
         }
     }
+}
+
+public class SimpleComment
+{
+    public string Author { get; set; }
+    public string Body { get; set; }
+    public Guid PostId { get; set; }
 }

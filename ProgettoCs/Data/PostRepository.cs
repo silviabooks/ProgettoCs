@@ -57,8 +57,7 @@ namespace ProgettoCs.Data
 
             return res.IsAcknowledged && res.ModifiedCount > 0;
         }
-
-
+        
         // COMMENTS FUNCTIONS:
 
         public async Task AddComment(Comment c) => await context.Comments.InsertOneAsync(c);
@@ -68,6 +67,6 @@ namespace ProgettoCs.Data
             var filter = Builders<Comment>.Filter.Eq("PostId", postId);
             return await context.Comments.Find(filter).ToListAsync();
         }
-
+        
     }
 }

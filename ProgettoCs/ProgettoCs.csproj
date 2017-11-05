@@ -30,20 +30,24 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\components\comments\comments.component.ts" />
     <None Remove="ClientApp\app\components\new-post\new-post.component.ts" />
     <None Remove="ClientApp\app\components\post-detail\post-detail.component.ts" />
     <None Remove="ClientApp\app\components\posts-view\posts-view.component.ts" />
     <None Remove="ClientApp\app\components\simplepost.type.ts" />
     <None Remove="ClientApp\app\post.type.ts" />
     <None Remove="ClientApp\app\types\comment.type.ts" />
+    <None Remove="ClientApp\app\types\simplecomment.type.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\components\comments\comments.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\new-post\new-post.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\post-detail\post-detail.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\posts-view\posts-view.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\post.type.ts" />
     <TypeScriptCompile Include="ClientApp\app\types\comment.type.ts" />
+    <TypeScriptCompile Include="ClientApp\app\types\simplecomment.type.ts" />
   </ItemGroup>
 
   <ItemGroup>

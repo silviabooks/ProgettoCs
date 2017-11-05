@@ -1,13 +1,39 @@
 ﻿<h1>{{currentPost.Title}}</h1>
+<button class="btn btn-warning btn-sm pull-right" (click)="cancelPost()">
+    <span class=" glyphicon glyphicon-trash"></span> Cancel post
+</button>
 <div>
     <p *ngIf="currentPost.Body == null">
         <em>The post is empty.</em>
     </p>
-    <p *ngIf="currentPost.Body != null">{{currentPost.Body}}</p>
+    <p *ngIf="currentPost.Body != null">{{ currentPost.Body }}</p>
 </div>
 <h6 >Publication date: {{ currentPost.PublicationDate | date : "MMM d, y h:mm:ss a" }}</h6>
 
-<button class="btn btn-warning btn-sm pull-right" (click)="cancelPost()">
-    <span class=" glyphicon glyphicon-trash"></span> Cancel post
-</button>
+<h3 class="comment-class">Comments</h3>
+<div class="comment-class" *ngIf="comments[0] == null"><em>There are no comments yet. Be the first!</em></div>
+<div *ngIf="comments != null">
+    <div *ngFor="let c of comments">
+        <h4 class="comment-class">From: {{ c.Author }} </h4>
+        <h5 class="comment-class"> {{ c.Body }}</h5>
+        <h6 class="comment-class">Posted on: {{ c.CommentedOn | date : "MMM d, y h:mm:ss a" }}</h6>
+    </div>
+</div>
 
+<h3 >Add a comment</h3>
+<form>
+    <div class="form-group">
+        <label for="author">Author:</label>
+        <input type="text" class="form-control" id="author"
+               [(ngModel)]="newCommentAuthor"
+               [ngModelOptions]="{standalone: true}"
+               placeholder="Type in your name">
+    </div>
+    <div class="form-group">
+        <label for="body">Comment body:</label>
+        <textarea class="form-control" rows="2" id="body"
+                  [(ngModel)]="newCommentBody"
+                  [ngModelOptions]="{standalone: true}"></textarea>
+    </div>
+    <button class="btn btn-info" (click)="addNewComment()">Submit</button>
+</form>
