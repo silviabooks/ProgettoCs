@@ -17,12 +17,21 @@ namespace ProgettoCs.Data
             if(client != null)
                 mongoDatabase = client.GetDatabase("YourPersonalBlog");
         }
-
+        // Creation of "Post" collection
         public IMongoCollection<Post> Posts
         {
             get
             {
                 return mongoDatabase.GetCollection<Post>("Post");
+            }
+        }
+
+        // Creation of "Comment" collection
+        public IMongoCollection<Comment> Comments
+        {
+            get
+            {
+                return mongoDatabase.GetCollection<Comment>("Comment");
             }
         }
     }

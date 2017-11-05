@@ -22,5 +22,8 @@ namespace ProgettoCs.Interfaces
         // update a post (only the post body)
         Task<bool> UpdatePost(Guid id, string body);
 
+        Task AddComment(Comment c);
+
+        Task<IEnumerable<Comment>> GetPostComments(Guid postId);
     }
 }

@@ -24,15 +24,38 @@ namespace ProgettoCs.Controllers
         [HttpGet("{setting}")]
         public string Get(string setting)
         {
+
+            Post post1 = new Post()
+            {
+                Id = new Guid(),
+                Title = "Post title 1",
+                Body = "Test body 1",
+                PublicationDate = DateTime.Now,
+                LastModified = DateTime.Now
+            };
+
+
+
             if (setting == "initialize")
             {
-                _repository.AddPost(new Post()
+                _repository.AddPost(post1);
+
+                _repository.AddComment(new Comment()
                 {
                     Id = new Guid(),
-                    Title = "Post title 1",
-                    Body = "Test body 1",
-                    PublicationDate = DateTime.Now,
-                    LastModified = DateTime.Now
+                    Author = "Peppe",
+                    Body = "This post is lame!",
+                    PostId = post1.Id,
+                    CommentedOn = DateTime.Now
+                });
+
+                _repository.AddComment(new Comment()
+                {
+                    Id = new Guid(),
+                    Author = "Salvo",
+                    Body = "Bla bla bla bla bla",
+                    PostId = post1.Id,
+                    CommentedOn = DateTime.Now
                 });
                 _repository.AddPost(new Post()
                 {

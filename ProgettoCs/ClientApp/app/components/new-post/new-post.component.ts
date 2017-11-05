@@ -1,7 +1,7 @@
 ﻿import { Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { Post } from '../../post.type';
-import { SimplePost } from '../../simplepost.type';
+import { Post } from '../../types/post.type';
+import { SimplePost } from '../../types/simplepost.type';
 import { Headers, Http, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 

@@ -57,5 +57,17 @@ namespace ProgettoCs.Data
 
             return res.IsAcknowledged && res.ModifiedCount > 0;
         }
+
+
+        // COMMENTS FUNCTIONS:
+
+        public async Task AddComment(Comment c) => await context.Comments.InsertOneAsync(c);
+
+        public async Task<IEnumerable<Comment>> GetPostComments(Guid postId)
+        {
+            var filter = Builders<Comment>.Filter.Eq("PostId", postId);
+            return await context.Comments.Find(filter).ToListAsync();
+        }
+
     }
 }

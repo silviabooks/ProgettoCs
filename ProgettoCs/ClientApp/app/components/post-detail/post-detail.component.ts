@@ -1,6 +1,6 @@
 ﻿import { Component, Inject, Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Post } from '../../post.type';
+import { Post } from '../../types/post.type';
 import { Headers, Http, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 

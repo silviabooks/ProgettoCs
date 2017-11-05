@@ -1,6 +1,6 @@
 ﻿import { Component, Inject } from '@angular/core';
 import { Headers, Http, RequestOptions } from '@angular/http';
-import { Post } from '../../post.type';
+import { Post } from '../../types/post.type';
 import { Observable } from "rxjs/Observable";
 import { Router } from '@angular/router';
 import 'rxjs/add/observable/forkJoin';
