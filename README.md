@@ -13,7 +13,7 @@ For the data access to the MongoDB NoSQL database, a series of classes have been
 * Angular 2
 * Robo 3T (a GUI for MongoDB, optional)
 
-### Initialization
+## Initialization
 You have to compile and run the application with IIS service. Once the application is started, to initialize the database with some sample data, go to http://localhost:PORTNUMBER/api/admin/initialize.
 
 Have fun!
